@@ -4,16 +4,15 @@ import paramiko
 import threading
 from paramiko_expect import SSHClientInteraction
 
-
 USERNAME = input('Enter device username: ')
 PASSWORD = getpass.getpass('Enter Pass: ')
 
+#Open list of ip addresses
 with open('ip_list.txt', mode='rt', encoding='utf-8') as f:
-    ip_addr = [line.rstrip('\n') for line in f]
+    #create list ip_addrs
+    ip_addrs = [line.rstrip('\n') for line in f]
 
-
-for i in ip_addr:
-    print(i)
+for i in ip_addrs:
     device_connect = [i, USERNAME, PASSWORD]
     device_connections.append(device_connect)
 
