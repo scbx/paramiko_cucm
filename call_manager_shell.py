@@ -12,6 +12,7 @@ with open('ip_list.txt', mode='rt', encoding='utf-8') as f:
     #create list ip_addrs
     ip_addrs = [line.rstrip('\n') for line in f]
 
+#Map connections to ip, username and password
 for i in ip_addrs:
     device_connect = [i, USERNAME, PASSWORD]
     device_connections.append(device_connect)
